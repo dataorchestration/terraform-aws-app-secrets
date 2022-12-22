@@ -3,7 +3,7 @@ output "all" {
   value = [
     for name in keys(local.secrets) : {
       name = upper(replace(name, "-", "_"))
-      arn  = aws_secretsmanager_secret.app[name].id
+      arn  = aws_secretsmanager_secret.app[name].arn
     }
   ]
 
